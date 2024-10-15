@@ -85,3 +85,16 @@ INSERT INTO Transactions VALUES(1005,'2024-11-15 13:23:44',106,1819005,12002);
 INSERT INTO Transactions VALUES(1006,'2024-11-16 13:23:44',101,1819005,12002);
 INSERT INTO Transactions VALUES(1007,'2024-11-17 13:23:44',103,1819004,12001);
 INSERT INTO Transactions VALUES(1008,'2024-11-18 13:23:44',101,1819004,12001);
+
+
+ALTER TABLE customer DROP COLUMN `Customer_Category`;
+ALTER TABLE customer ADD COLUMN `Customer_Category` VARCHAR(45) NOT NULL;
+
+UPDATE customer SET `Customer_Category` = 'Credited' WHERE CustomerID = 1819001;
+UPDATE customer SET `Customer_Category` = 'Subscription' WHERE CustomerID = 1819002;
+
+UPDATE customer SET `Customer_Category` = 'Credited' WHERE CustomerID = 1819003;
+
+UPDATE customer SET `Customer_Category` = 'Walk_In' WHERE CustomerID = 1819004;
+
+UPDATE customer SET `Customer_Category` = 'Walk_In' WHERE CustomerID = 1819005;
